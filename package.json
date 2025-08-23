@@ -1,0 +1,27 @@
+{
+  "name": "Yongin Gojin Station Daekwang Rosebiang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.0",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.13.0",
+    "jquery": "^3.7.1",
+    "locomotive-scroll": "^4.1.4",
+    "next": "^15.5.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "swiper": "^11.2.10"
+  }
+}

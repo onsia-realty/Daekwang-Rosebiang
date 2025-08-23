@@ -1,0 +1,21 @@
+/* Popup CSS - Additional Styles */
+.popupWrap {
+    max-width: 450px;
+}
+
+.popupWrap .contWrap::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popupWrap .contWrap::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.popupWrap .contWrap::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.popupWrap .contWrap::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
