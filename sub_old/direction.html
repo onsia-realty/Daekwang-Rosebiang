@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오시는길 | 용인 고진역 대광로제비앙</title>
+    <link rel="stylesheet" href="../assets/css/common/common.css">
+    <link rel="stylesheet" href="../assets/css/common/layout.css">
+    <style>
+        .direction-wrap {
+            padding: 150px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .direction-wrap h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a5490;
+        }
+        .map-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .info-card {
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+        .info-card h3 {
+            font-size: 20px;
+            color: #1a5490;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .info-card h3:before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #1a5490;
+            margin-right: 10px;
+        }
+        .info-card p {
+            line-height: 1.8;
+            color: #666;
+        }
+        .contact-info {
+            background: #1a5490;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-info .phone {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact-info .hours {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .transport-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .transport-tabs button {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .transport-tabs button.active {
+            background: #1a5490;
+            color: white;
+            border-color: #1a5490;
+        }
+        .transport-content {
+            display: none;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+        .transport-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="topWrap">
+            <div class="leftWrap">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/common/img_logo.png" alt="">
+                </a>
+            </div>
+            <div class="rightWrap">
+                <ul class="menu">
+                    <li><a href="summary.html">사업개요</a></li>
+                    <li><a href="location.html">입지환경</a></li>
+                    <li><a href="premium.html">프리미엄</a></li>
+                    <li><a href="brand.html">브랜드 소개</a></li>
+                    <li class="active"><a href="direction.html">오시는길</a></li>
+                    <li><a href="guide1.html">청약안내</a></li>
+                    <li><a href="customer.html">관심고객등록</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="direction-wrap">
+        <h2>오시는길</h2>
+        
+        <div class="map-section">
+            <div class="map-container">
+                지도 이미지 없음
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>현장 주소</h3>
+                    <p>경기도 용인시 처인구 고진역 인근<br>
+                    (상세 주소는 문의 바랍니다)</p>
+                </div>
+                <div class="info-card">
+                    <h3>모델하우스 주소</h3>
+                    <p>경기도 용인시 처인구 김량장동<br>
+                    (상세 주소는 문의 바랍니다)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transport-tabs">
+            <button class="active" data-tab="car">자가용</button>
+            <button data-tab="public">대중교통</button>
+            <button data-tab="subway">지하철</button>
+        </div>
+        
+        <div class="transport-content active" id="car">
+            <h3>자가용 이용 시</h3>
+            <p>• 서울-세종고속도로 용인IC → 약 10분<br>
+            • 경부고속도로 용인IC → 약 15분<br>
+            • 영동고속도로 양지IC → 약 20분</p>
+        </div>
+        
+        <div class="transport-content" id="public">
+            <h3>대중교통 이용 시</h3>
+            <p>• 고진역에서 도보 5분<br>
+            • 버스: 10, 10-4, 37, 66-4 등<br>
+            • 마을버스 운행</p>
+        </div>
+        
+        <div class="transport-content" id="subway">
+            <h3>지하철 이용 시</h3>
+            <p>• 에버라인 고진역 도보 5분<br>
+            • 수인분당선 기흥역 → 버스 환승<br>
+            • 1호선 수원역 → 버스 환승</p>
+        </div>
+        
+        <div class="contact-info">
+            <h3>문의전화</h3>
+            <div class="phone">1551-3300</div>
+            <div class="hours">평일 09:00 - 18:00 | 주말 10:00 - 17:00</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.transport-tabs button').click(function() {
+                var tab = $(this).data('tab');
+                
+                $('.transport-tabs button').removeClass('active');
+                $(this).addClass('active');
+                
+                $('.transport-content').removeClass('active');
+                $('#' + tab).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

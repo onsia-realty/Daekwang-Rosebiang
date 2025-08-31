@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입지환경 | 용인 고진역 대광로제비앙</title>
+    <link rel="stylesheet" href="../assets/css/common/common.css">
+    <link rel="stylesheet" href="../assets/css/common/layout.css">
+    <style>
+        .location-wrap {
+            padding: 150px 20px 100px;
+        }
+        .location-wrap h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a5490;
+        }
+        .location-wrap .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 80px;
+        }
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            background: #f5f5f5;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #999;
+            font-size: 18px;
+        }
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .feature-card .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: #1a5490;
+            border-radius: 50%;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="topWrap">
+            <div class="leftWrap">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/common/img_logo.png" alt="">
+                </a>
+            </div>
+            <div class="rightWrap">
+                <ul class="menu">
+                    <li><a href="summary.html">사업개요</a></li>
+                    <li class="active"><a href="location.html">입지환경</a></li>
+                    <li><a href="premium.html">프리미엄</a></li>
+                    <li><a href="brand.html">브랜드 소개</a></li>
+                    <li><a href="direction.html">오시는길</a></li>
+                    <li><a href="guide1.html">청약안내</a></li>
+                    <li><a href="customer.html">관심고객등록</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="location-wrap">
+        <h2>입지환경</h2>
+        <p class="subtitle">고진역 역세권의 프리미엄 주거공간</p>
+        
+        <div class="map-container">
+            위치도 이미지 없음
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon"></div>
+                <h3>교통</h3>
+                <p>고진역 도보 5분<br>
+                서울-세종고속도로 인접<br>
+                광역교통망 우수</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"></div>
+                <h3>교육</h3>
+                <p>명문 학군 인접<br>
+                다양한 교육시설<br>
+                우수한 교육환경</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"></div>
+                <h3>생활</h3>
+                <p>대형마트 인접<br>
+                편의시설 다수<br>
+                편리한 생활환경</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"></div>
+                <h3>자연</h3>
+                <p>녹지율 40%<br>
+                공원 인접<br>
+                쿨한 주거환경</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

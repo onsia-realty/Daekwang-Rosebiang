@@ -1,21 +1,234 @@
-/* Popup CSS - Additional Styles */
+/* Popup Styles */
+
+/* 사이드 팝업 */
 .popupWrap {
-    max-width: 450px;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    flex-flow: row wrap;
+    transform: translateX(-100%);
+    transition: all 1s;
 }
 
-.popupWrap .contWrap::-webkit-scrollbar {
-    width: 6px;
+.popupWrap.active {
+    transform: translateX(0%);
 }
 
-.popupWrap .contWrap::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.popupWrap .contWrap {
+    display: flex;
+    position: relative;
+    opacity: 1;
+    transition: all 1s;
 }
 
-.popupWrap .contWrap::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 3px;
+.popupWrap.active .contWrap {
+    opacity: 1;
 }
 
-.popupWrap .contWrap::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.popupWrap .popup {
+    float: left;
+    position: relative;
+}
+
+.popupWrap .popup img {
+    display: block;
+    max-height: 400px;
+    width: auto;
+}
+
+.popupWrap .btnsWrap {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 100%;
+    background-color: #ABA197;
+    cursor: pointer;
+}
+
+.popupWrap .btnsWrap p {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Malgun Gothic', sans-serif;
+    position: absolute;
+    top: 20px;
+    left: 70%;
+    font-weight: bold;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+}
+
+.popupWrap .btnsWrap span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+    background: url('../images/common/img_popup_btn.png') no-repeat center center/20px;
+    transition: all .3s;
+}
+
+.popupWrap.active .btnsWrap span {
+    background: url('../images/common/img_popup_close_btn.png') no-repeat center center/25px;
+}
+
+.popupWrap .btnsWrap::after {
+    width: 20px;
+    height: 4px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    bottom: 17px;
+    left: 15px;
+    transform: rotate(135deg);
+    content: "";
+    transition: all .5s;
+    z-index: 1;
+}
+
+.popupWrap .btnsWrap::before {
+    width: 20px;
+    height: 4px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    bottom: 29px;
+    left: 15px;
+    transform: rotate(-135deg);
+    content: "";
+    transition: all .5s;
+    z-index: 1;
+}
+
+.popupWrap.active .btnsWrap::after {
+    width: 30px;
+    height: 4px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    transform: rotate(-45deg);
+    content: "";
+    z-index: 1;
+}
+
+.popupWrap.active .btnsWrap::before {
+    width: 30px;
+    height: 4px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    transform: rotate(45deg);
+    content: "";
+    z-index: 1;
+}
+
+/* 비디오 팝업 */
+.videoPopWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+}
+
+.videoPopWrap .videoWrap {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 20px 0;
+}
+
+.videoPopWrap .videoWrap iframe {
+    width: 1067px;
+    height: 600px;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.videoPopWrap .videoWrap .closeBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    border: 2px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.videoPopWrap .videoWrap .closeBtn:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+    .videoPopWrap .videoWrap iframe {
+        width: 90vw;
+        max-width: 900px;
+        height: 50vw;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popupWrap {
+        top: 100px;
+    }
+    
+    .popupWrap .popup img {
+        max-height: 300px;
+    }
+    
+    .popupWrap .btnsWrap {
+        width: 40px;
+        right: -40px;
+    }
+    
+    .popupWrap .btnsWrap p {
+        font-size: 14px;
+        left: 60%;
+    }
+    
+    .videoPopWrap .videoWrap iframe {
+        width: 95vw;
+        height: 53vw;
+    }
+    
+    .videoPopWrap .videoWrap .closeBtn {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popupWrap .popup {
+        display: none;
+    }
+    
+    .popupWrap .popup:first-child {
+        display: block;
+    }
+    
+    .popupWrap .popup img {
+        max-height: 250px;
+        max-width: calc(100vw - 100px);
+    }
 }

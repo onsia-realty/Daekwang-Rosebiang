@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_click",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

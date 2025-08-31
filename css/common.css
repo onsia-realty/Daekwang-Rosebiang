@@ -1,0 +1,274 @@
+/* Common Styles */
+
+/* 헤더 */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.headerWrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.gnb {
+    flex: 1;
+    margin: 0 50px;
+}
+
+.gnb > ul {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.gnb > ul > li {
+    position: relative;
+}
+
+.gnb > ul > li > a {
+    display: block;
+    padding: 30px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.gnb > ul > li:hover > a {
+    color: #c8986b;
+}
+
+.gnb .depth2 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.gnb > ul > li:hover .depth2 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gnb .depth2 li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.gnb .depth2 li a:hover {
+    color: #c8986b;
+    background: #f8f8f8;
+}
+
+.headerInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerInfo .tel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #f8f8f8;
+    border-radius: 25px;
+}
+
+.headerInfo .tel img {
+    width: 20px;
+}
+
+.headerInfo .tel span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.menuBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.menuBtn img {
+    width: 20px;
+}
+
+/* 플로팅 버튼 */
+.floatingBtns {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floatBtn {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.floatBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.floatBtn .text {
+    position: absolute;
+    right: 70px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.floatBtn:hover .text {
+    opacity: 1;
+}
+
+/* 푸터 */
+#footer {
+    background: #2c2c2c;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+.footerWrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footerWrap img {
+    max-width: 800px;
+}
+
+/* 컨테이너 */
+#container {
+    padding-top: 80px;
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sec {
+    padding: 100px 0;
+}
+
+.titleWrap {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titleWrap img {
+    display: inline-block;
+    margin: 10px;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+    .gnb > ul {
+        gap: 40px;
+    }
+    
+    .gnb > ul > li > a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .gnb {
+        display: none;
+    }
+    
+    .menuBtn {
+        display: flex;
+    }
+    
+    .headerInfo .tel span {
+        display: none;
+    }
+    
+    .floatingBtns {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .floatBtn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerWrap {
+        height: 60px;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    #container {
+        padding-top: 60px;
+    }
+    
+    .sec {
+        padding: 60px 0;
+    }
+    
+    .titleWrap {
+        margin-bottom: 40px;
+    }
+    
+    #footer {
+        padding: 30px 0;
+        margin-top: 60px;
+    }
+}
