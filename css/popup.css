@@ -1,5 +1,54 @@
 /* Popup Styles */
 
+/* 비디오 팝업 */
+.videoPopWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.videoPopWrap .videoWrap {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.videoPopWrap .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #c8986b;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c8986b;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.videoPopWrap .closeBtn:hover {
+    background: #c8986b;
+    color: #fff;
+}
+
+.videoPopWrap iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 1067px;
+    max-height: 600px;
+}
+
 /* 사이드 팝업 */
 .popupWrap {
     position: fixed;

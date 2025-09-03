@@ -45,13 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         speed: 800,
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 20,
         centeredSlides: true,
         navigation: {
             nextEl: '.gallerySlider .swiper-button-next',
             prevEl: '.gallerySlider .swiper-button-prev',
         },
         breakpoints: {
+            480: {
+                slidesPerView: 1.5,
+                spaceBetween: 15,
+            },
             640: {
                 slidesPerView: 2,
                 spaceBetween: 20,

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>협력업체 등록 | 용인 고진역 대광로제비앙</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="headerWrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/common/img_logo.png" alt="용인 고진역 대광로제비앙">
+                </a>
+            </h1>
+            
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="summary.html">사업개요</a>
+                        <ul class="depth2">
+                            <li><a href="summary.html">사업개요</a></li>
+                            <li><a href="location.html">입지환경</a></li>
+                            <li><a href="premium.html">프리미엄</a></li>
+                            <li><a href="brand.html">브랜드 소개</a></li>
+                            <li><a href="direction.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="chart.html">단지안내</a>
+                        <ul class="depth2">
+                            <li><a href="chart.html">단지/동·호배치도</a></li>
+                            <li><a href="community.html">커뮤니티</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="unit.html">세대안내</a>
+                        <ul class="depth2">
+                            <li><a href="unit.html">유니트 안내</a></li>
+                            <li><a href="emodelhouse.html">E-모델하우스</a></li>
+                            <li><a href="materials.html">마감재 리스트</a></li>
+                            <li><a href="guide4.html">이동통신설비설치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">분양안내</a>
+                        <ul class="depth2">
+                            <li><a href="schedule.html">분양일정</a></li>
+                            <li><a href="guide5.html">분양안내</a></li>
+                            <li><a href="announcement.html">입주자모집공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guide1.html">청약안내</a>
+                        <ul class="depth2">
+                            <li><a href="guide1.html">청약체크리스트</a></li>
+                            <li><a href="guide2.html">일반공급 신청자격</a></li>
+                            <li><a href="guide3.html">특별공급 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customer.html">홍보센터</a>
+                        <ul class="depth2">
+                            <li><a href="customer.html">관심고객등록</a></li>
+                            <li><a href="video.html">홍보영상</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="partner.html">협력업체등록</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="headerInfo">
+                <a href="tel:1668-5257" class="tel">
+                    <img src="../images/common/img_tel.png" alt="전화문의">
+                    <span>1668-5257</span>
+                </a>
+                <button class="menuBtn" id="menuBtn">
+                    <img src="../images/common/img_open.png" alt="메뉴열기">
+                    <span>MENU</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 서브 비주얼 -->
+    <section class="subVisual">
+        <div class="visualImg">
+            <img src="../images/sub/img_top_partner.png" alt="협력업체등록">
+        </div>
+        <div class="visualText">
+            <h2>
+                <span class="en">PARTNER</span>
+                <span class="ko">협력업체등록</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <nav class="subNav">
+        <div class="inner">
+            <ul>
+                <li class="active"><a href="partner.html">협력업체 등록</a></li>
+                <li><a href="partner_procedure.html">등록 방법 및 절차</a></li>
+                <li><a href="partner_list.html">등록업체 리스트</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 컨텐츠 -->
+    <main id="container">
+        <section class="subContent">
+            <div class="inner">
+                <div class="titleArea">
+                    <h3>협력업체 등록</h3>
+                    <p>용인 고진역 대광로제비앙과 함께할 협력업체를 모집합니다.</p>
+                </div>
+
+                <form id="partnerForm" class="registForm">
+                    <div class="formSection">
+                        <h4>업체 정보</h4>
+                        <table class="formTable">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="75%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>업체명 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="text" id="companyName" name="companyName" class="inputText" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사업자등록번호 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="text" id="businessNumber" name="businessNumber" class="inputText" placeholder="000-00-00000" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대표자명 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="text" id="ceoName" name="ceoName" class="inputText" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>업종 <span class="required">*</span></th>
+                                    <td>
+                                        <select id="businessType" name="businessType" class="selectBox" required>
+                                            <option value="">선택하세요</option>
+                                            <option value="건설">건설</option>
+                                            <option value="전기">전기</option>
+                                            <option value="설비">설비</option>
+                                            <option value="인테리어">인테리어</option>
+                                            <option value="조경">조경</option>
+                                            <option value="자재납품">자재납품</option>
+                                            <option value="기타">기타</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주소 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="text" id="address" name="address" class="inputText" required>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="formSection">
+                        <h4>담당자 정보</h4>
+                        <table class="formTable">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="75%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>담당자명 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="text" id="contactName" name="contactName" class="inputText" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>연락처 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="tel" id="contactPhone" name="contactPhone" class="inputText" placeholder="010-0000-0000" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이메일 <span class="required">*</span></th>
+                                    <td>
+                                        <input type="email" id="contactEmail" name="contactEmail" class="inputText" placeholder="example@email.com" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>팩스</th>
+                                    <td>
+                                        <input type="text" id="fax" name="fax" class="inputText" placeholder="02-0000-0000">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="formSection">
+                        <h4>추가 정보</h4>
+                        <table class="formTable">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="75%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>주요 실적</th>
+                                    <td>
+                                        <textarea id="performance" name="performance" class="textareaBox" rows="5" placeholder="주요 공사 실적을 입력해주세요."></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기타사항</th>
+                                    <td>
+                                        <textarea id="notes" name="notes" class="textareaBox" rows="5" placeholder="기타 전달사항을 입력해주세요."></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="agreeSection">
+                        <div class="checkWrap">
+                            <input type="checkbox" id="agreeAll" class="checkBox">
+                            <label for="agreeAll">전체 동의</label>
+                        </div>
+                        <div class="checkWrap">
+                            <input type="checkbox" id="agree1" class="checkBox agreeItem" required>
+                            <label for="agree1">[필수] 개인정보 수집 및 이용에 동의합니다.</label>
+                            <button type="button" class="viewBtn" onclick="showPrivacyPolicy()">보기</button>
+                        </div>
+                        <div class="checkWrap">
+                            <input type="checkbox" id="agree2" class="checkBox agreeItem" required>
+                            <label for="agree2">[필수] 협력업체 등록 약관에 동의합니다.</label>
+                            <button type="button" class="viewBtn" onclick="showTerms()">보기</button>
+                        </div>
+                    </div>
+
+                    <div class="btnArea">
+                        <button type="button" class="btnCancel" onclick="resetForm()">취소</button>
+                        <button type="submit" class="btnSubmit">등록하기</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="footerWrap">
+            <div class="footerContent">
+                <p class="footerText">
+                    <strong>용인 고진역 대광로제비앙</strong><br>
+                    경기도 용인시 처인구 양지면 양지리 697번지 일원<br>
+                    시행사: 대광건영(주) | 시공사: 대광건영(주)<br>
+                    분양문의: <strong class="telNumber">1668-5257</strong>
+                </p>
+                <p class="copyright">
+                    Copyright © 2024 Daekwang Rosebiang. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/common.js"></script>
+    <script src="../js/sub.js"></script>
+    <script src="../js/partner.js"></script>
+</body>
+</html>
