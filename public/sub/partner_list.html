@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>등록업체 리스트 | 용인 고진역 대광로제비앙</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="headerWrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/common/img_logo.png" alt="용인 고진역 대광로제비앙">
+                </a>
+            </h1>
+            
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="summary.html">사업개요</a>
+                        <ul class="depth2">
+                            <li><a href="summary.html">사업개요</a></li>
+                            <li><a href="location.html">입지환경</a></li>
+                            <li><a href="premium.html">프리미엄</a></li>
+                            <li><a href="brand.html">브랜드 소개</a></li>
+                            <li><a href="direction.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="chart.html">단지안내</a>
+                        <ul class="depth2">
+                            <li><a href="chart.html">단지/동·호배치도</a></li>
+                            <li><a href="community.html">커뮤니티</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="unit.html">세대안내</a>
+                        <ul class="depth2">
+                            <li><a href="unit.html">유니트 안내</a></li>
+                            <li><a href="emodelhouse.html">E-모델하우스</a></li>
+                            <li><a href="materials.html">마감재 리스트</a></li>
+                            <li><a href="guide4.html">이동통신설비설치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">분양안내</a>
+                        <ul class="depth2">
+                            <li><a href="schedule.html">분양일정</a></li>
+                            <li><a href="guide5.html">분양안내</a></li>
+                            <li><a href="announcement.html">입주자모집공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guide1.html">청약안내</a>
+                        <ul class="depth2">
+                            <li><a href="guide1.html">청약체크리스트</a></li>
+                            <li><a href="guide2.html">일반공급 신청자격</a></li>
+                            <li><a href="guide3.html">특별공급 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customer.html">홍보센터</a>
+                        <ul class="depth2">
+                            <li><a href="customer.html">관심고객등록</a></li>
+                            <li><a href="video.html">홍보영상</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="partner.html">협력업체등록</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="headerInfo">
+                <a href="tel:1668-5257" class="tel">
+                    <img src="../images/common/img_tel.png" alt="전화문의">
+                    <span>1668-5257</span>
+                </a>
+                <button class="menuBtn" id="menuBtn">
+                    <img src="../images/common/img_open.png" alt="메뉴열기">
+                    <span>MENU</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 서브 비주얼 -->
+    <section class="subVisual">
+        <div class="visualImg">
+            <img src="../images/sub/img_top_partner.png" alt="협력업체등록">
+        </div>
+        <div class="visualText">
+            <h2>
+                <span class="en">PARTNER LIST</span>
+                <span class="ko">등록업체 리스트</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <nav class="subNav">
+        <div class="inner">
+            <ul>
+                <li><a href="partner.html">협력업체 등록</a></li>
+                <li><a href="partner_procedure.html">등록 방법 및 절차</a></li>
+                <li class="active"><a href="partner_list.html">등록업체 리스트</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 컨텐츠 -->
+    <main id="container">
+        <section class="subContent">
+            <div class="inner">
+                <div class="titleArea">
+                    <h3>등록업체 리스트</h3>
+                    <p>용인 고진역 대광로제비앙에 등록된 협력업체 목록입니다.</p>
+                </div>
+
+                <!-- 검색 영역 -->
+                <div class="searchArea">
+                    <form class="searchForm" onsubmit="searchPartners(event)">
+                        <select class="selectBox" id="searchType">
+                            <option value="all">전체</option>
+                            <option value="companyName">업체명</option>
+                            <option value="businessType">업종</option>
+                            <option value="status">상태</option>
+                        </select>
+                        <input type="text" class="inputText" id="searchKeyword" placeholder="검색어를 입력하세요">
+                        <button type="submit" class="searchBtn">검색</button>
+                    </form>
+                </div>
+
+                <!-- 리스트 테이블 -->
+                <table class="listTable">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>업체명</th>
+                            <th>대표자</th>
+                            <th>업종</th>
+                            <th>연락처</th>
+                            <th>등록일</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody id="partnerListBody">
+                        <!-- 동적으로 생성될 리스트 -->
+                    </tbody>
+                </table>
+
+                <!-- 데이터 없음 메시지 -->
+                <div id="noDataMessage" style="display:none; text-align:center; padding:60px 0; color:#999;">
+                    등록된 협력업체가 없습니다.
+                </div>
+
+                <!-- 페이지네이션 -->
+                <div class="pagination" id="pagination">
+                    <!-- 동적으로 생성될 페이지 번호 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="footerWrap">
+            <div class="footerContent">
+                <p class="footerText">
+                    <strong>용인 고진역 대광로제비앙</strong><br>
+                    경기도 용인시 처인구 양지면 양지리 697번지 일원<br>
+                    시행사: 대광건영(주) | 시공사: 대광건영(주)<br>
+                    분양문의: <strong class="telNumber">1668-5257</strong>
+                </p>
+                <p class="copyright">
+                    Copyright © 2024 Daekwang Rosebiang. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/common.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        let currentPage = 1;
+        const itemsPerPage = 10;
+        let filteredData = [];
+
+        // 페이지 로드시 리스트 표시
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPartnerList();
+        });
+
+        // 협력업체 리스트 로드
+        function loadPartnerList() {
+            const partners = JSON.parse(localStorage.getItem('partners')) || [];
+            
+            // 샘플 데이터 추가 (실제 데이터가 없을 경우)
+            if (partners.length === 0) {
+                partners.push(
+                    {
+                        id: 'P001',
+                        companyName: '대한건설(주)',
+                        ceoName: '김대한',
+                        businessType: '건설',
+                        contactPhone: '010-1234-5678',
+                        registDate: '2024-01-15',
+                        status: 'approved'
+                    },
+                    {
+                        id: 'P002',
+                        companyName: '서울전기(주)',
+                        ceoName: '이서울',
+                        businessType: '전기',
+                        contactPhone: '010-2345-6789',
+                        registDate: '2024-01-20',
+                        status: 'approved'
+                    },
+                    {
+                        id: 'P003',
+                        companyName: '한국설비',
+                        ceoName: '박한국',
+                        businessType: '설비',
+                        contactPhone: '010-3456-7890',
+                        registDate: '2024-02-01',
+                        status: 'waiting'
+                    }
+                );
+            }
+            
+            filteredData = partners;
+            displayList();
+        }
+
+        // 리스트 표시
+        function displayList() {
+            const tbody = document.getElementById('partnerListBody');
+            const noDataMessage = document.getElementById('noDataMessage');
+            
+            if (filteredData.length === 0) {
+                tbody.innerHTML = '';
+                noDataMessage.style.display = 'block';
+                document.querySelector('.listTable').style.display = 'none';
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+            
+            noDataMessage.style.display = 'none';
+            document.querySelector('.listTable').style.display = 'table';
+            
+            // 페이지네이션 계산
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageData = filteredData.slice(startIndex, endIndex);
+            
+            // 테이블 내용 생성
+            tbody.innerHTML = pageData.map((item, index) => {
+                const statusClass = item.status === 'approved' ? 'approved' : 
+                                  item.status === 'rejected' ? 'rejected' : 'waiting';
+                const statusText = item.status === 'approved' ? '승인' : 
+                                 item.status === 'rejected' ? '반려' : '대기';
+                
+                const date = new Date(item.registDate);
+                const formattedDate = date.toLocaleDateString('ko-KR');
+                
+                return `
+                    <tr>
+                        <td>${filteredData.length - startIndex - index}</td>
+                        <td>${item.companyName}</td>
+                        <td>${item.ceoName}</td>
+                        <td>${item.businessType}</td>
+                        <td>${item.contactPhone}</td>
+                        <td>${formattedDate}</td>
+                        <td><span class="statusBadge ${statusClass}">${statusText}</span></td>
+                    </tr>
+                `;
+            }).join('');
+            
+            // 페이지네이션 생성
+            createPagination();
+        }
+
+        // 페이지네이션 생성
+        function createPagination() {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            // 이전 버튼
+            if (currentPage > 1) {
+                html += `<a href="#" onclick="goToPage(${currentPage - 1}); return false;">‹</a>`;
+            }
+            
+            // 페이지 번호
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<a href="#" class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i}); return false;">${i}</a>`;
+            }
+            
+            // 다음 버튼
+            if (currentPage < totalPages) {
+                html += `<a href="#" onclick="goToPage(${currentPage + 1}); return false;">›</a>`;
+            }
+            
+            pagination.innerHTML = html;
+        }
+
+        // 페이지 이동
+        function goToPage(page) {
+            currentPage = page;
+            displayList();
+            window.scrollTo(0, 0);
+        }
+
+        // 검색 기능
+        function searchPartners(event) {
+            event.preventDefault();
+            
+            const searchType = document.getElementById('searchType').value;
+            const keyword = document.getElementById('searchKeyword').value.toLowerCase();
+            const partners = JSON.parse(localStorage.getItem('partners')) || [];
+            
+            if (!keyword || searchType === 'all') {
+                filteredData = partners;
+            } else {
+                filteredData = partners.filter(item => {
+                    const value = item[searchType] ? item[searchType].toLowerCase() : '';
+                    return value.includes(keyword);
+                });
+            }
+            
+            currentPage = 1;
+            displayList();
+        }
+    </script>
+</body>
+</html>

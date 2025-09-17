@@ -110,9 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.classList.add('visible');
                 
                 // 섹션별 애니메이션
-                if (entry.target.classList.contains('sec1Wrap')) {
-                    animateSection1();
-                } else if (entry.target.classList.contains('sec2Wrap')) {
+                if (entry.target.classList.contains('sec2Wrap')) {
                     animateSection2();
                 } else if (entry.target.classList.contains('sec3Wrap')) {
                     animateSection3();
@@ -131,22 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // 섹션1 애니메이션
-    function animateSection1() {
-        const gridItems = document.querySelectorAll('.sec1Wrap .gridItem');
-        gridItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = 'all 0.6s ease';
-                
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 100);
-            }, index * 100);
-        });
-    }
     
     // 섹션2 애니메이션
     function animateSection2() {
@@ -244,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 마우스 호버 효과
-    const hoverElements = document.querySelectorAll('.gridItem, .videoBtn, .registerBtn');
+    const hoverElements = document.querySelectorAll('.videoBtn, .registerBtn');
     hoverElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             this.style.transition = 'all 0.3s ease';
@@ -274,16 +256,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 탭 기능 구현
+    const tabWrap = document.querySelector('.tab_wrap');
+    if (tabWrap) {
+        const tabLinks = tabWrap.querySelectorAll('li a');
+        const tabContents = document.querySelectorAll('.tab_content_area .tab_box');
+
+        tabLinks.forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // 모든 탭 비활성화
+                tabLinks.forEach(l => l.classList.remove('on'));
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+
+                // 클릭한 탭 활성화
+                this.classList.add('on');
+                if (tabContents[index]) {
+                    tabContents[index].classList.add('active');
+                    tabContents[index].style.display = 'block';
+                }
+            });
+        });
+
+        // 초기 상태 설정 (현재 on 클래스가 있는 탭 활성화)
+        if (tabContents.length > 0) {
+            const activeIndex = Array.from(tabLinks).findIndex(link => link.classList.contains('on'));
+            const initialIndex = activeIndex !== -1 ? activeIndex : 0;
+
+            tabContents.forEach((content, index) => {
+                if (index === initialIndex) {
+                    content.classList.add('active');
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        }
+    }
+
     // 페이지 로드 완료 후 초기 애니메이션
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
-        
+
         // 비주얼 텍스트 초기 애니메이션
         const visualText = document.querySelector('.visualSlider .swiper-slide-active .textWrap');
         if (visualText) {
             visualText.style.animation = 'fadeInUp 1s ease';
         }
-        
+
         // 스크롤 아이콘 애니메이션
         const scrollIcon = document.querySelector('.scrollIcon');
         if (scrollIcon) {

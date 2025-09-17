@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="용인 고진역 대광로제비앙 단지/동·호배치도 - 단지 전체 배치도 및 동별 호수 배치 안내">
+    <meta name="keywords" content="용인고진역,대광로제비앙,단지배치도,동호배치도,아파트배치">
+    <title>단지/동·호배치도 | 용인 고진역 대광로제비앙</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
+
+    <style>
+        /* 페이지 전용 스타일 */
+        .subVisual {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/sub/img_top_chart.png') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .subVisual h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .subVisual p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .chartContainer {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .chartSection {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sectionTitle {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .sectionTitle h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .sectionTitle h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #c8986b;
+        }
+
+        .sectionTitle p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .chartImage {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 80px;
+        }
+
+        .chartImage img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .chartFeatures {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .featureCard {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .featureCard:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .featureCard .icon {
+            width: 80px;
+            height: 80px;
+            background: #c8986b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .featureCard h4 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .featureCard p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .infoSection {
+            background: #fff;
+            padding: 100px 0;
+        }
+
+        .infoGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .infoCard {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border-left: 5px solid #c8986b;
+        }
+
+        .infoCard h4 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .infoCard ul {
+            list-style: none;
+        }
+
+        .infoCard li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .infoCard li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #c8986b;
+            font-size: 0.8rem;
+        }
+
+        .downloadSection {
+            background: linear-gradient(135deg, #c8986b, #b88859);
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .downloadBtn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+            margin-top: 30px;
+        }
+
+        .downloadBtn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* 서브 네비게이션 */
+        .subNav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .subNavTabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .subNavTabs li {
+            margin: 0;
+        }
+
+        .subNavTabs li a {
+            display: block;
+            padding: 20px 40px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .subNavTabs li a:hover {
+            color: #c8986b;
+            background: #f8f8f8;
+        }
+
+        .subNavTabs li.active a {
+            color: #c8986b;
+            border-bottom-color: #c8986b;
+            font-weight: 600;
+        }
+
+        .subNavTabs li.active a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #c8986b;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .subVisual h2 {
+                font-size: 2rem;
+            }
+
+            .sectionTitle h3 {
+                font-size: 2rem;
+            }
+
+            .chartContainer,
+            .infoSection {
+                padding: 60px 0;
+            }
+
+            .chartImage {
+                padding: 20px;
+            }
+
+            .featureCard,
+            .infoCard {
+                padding: 30px 20px;
+            }
+
+            .downloadSection {
+                padding: 60px 0;
+            }
+
+            .subNavTabs li a {
+                padding: 15px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="headerWrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/common/img_logo.png" alt="용인 고진역 대광로제비앙">
+                </a>
+            </h1>
+
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="summary.html">사업개요</a>
+                        <ul class="depth2">
+                            <li><a href="summary.html">사업개요</a></li>
+                            <li><a href="location.html">입지환경</a></li>
+                            <li><a href="premium.html">프리미엄</a></li>
+                            <li><a href="brand.html">브랜드 소개</a></li>
+                            <li><a href="direction.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="chart.html">단지안내</a>
+                        <ul class="depth2">
+                            <li><a href="chart.html" class="active">단지/동·호배치도</a></li>
+                            <li><a href="community.html">커뮤니티</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="unit.html">세대안내</a>
+                        <ul class="depth2">
+                            <li><a href="unit.html">유니트 안내</a></li>
+                            <li><a href="emodelhouse.html">E-모델하우스</a></li>
+                            <li><a href="materials.html">마감재 리스트</a></li>
+                            <li><a href="guide4.html">이동통신설비설치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">분양안내</a>
+                        <ul class="depth2">
+                            <li><a href="schedule.html">분양일정</a></li>
+                            <li><a href="guide5.html">분양안내</a></li>
+                            <li><a href="announcement.html">입주자모집공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guide1.html">청약안내</a>
+                        <ul class="depth2">
+                            <li><a href="guide1.html">청약체크리스트</a></li>
+                            <li><a href="guide2.html">일반공급 신청자격</a></li>
+                            <li><a href="guide3.html">특별공급 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customer.html">홍보센터</a>
+                        <ul class="depth2">
+                            <li><a href="customer.html">관심고객등록</a></li>
+                            <li><a href="video.html">홍보영상</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="partner.html">협력업체등록</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="headerInfo">
+                <a href="tel:1668-5257" class="tel">
+                    <img src="../images/common/img_tel.png" alt="전화문의">
+                    <span>1668-5257</span>
+                </a>
+                <button class="menuBtn" id="menuBtn">
+                    <img src="../images/common/img_open.png" alt="메뉴열기">
+                    <span>MENU</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="inner">
+            <a href="../index.html">HOME</a>
+            <span>></span>
+            <a href="chart.html">단지안내</a>
+            <span>></span>
+            <strong>단지/동·호배치도</strong>
+        </div>
+    </div>
+
+    <!-- 서브 비주얼 -->
+    <section class="subVisual">
+        <div class="inner">
+            <h2>단지안내</h2>
+            <p>용인 고진역 대광로제비앙의 단지 정보와 커뮤니티 시설을 확인하세요</p>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <section class="subNav">
+        <div class="inner">
+            <ul class="subNavTabs">
+                <li class="active"><a href="chart.html">단지/동·호배치도</a></li>
+                <li><a href="community.html">커뮤니티</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 메인 컨텐츠 -->
+    <main id="container">
+        <!-- 단지 배치도 -->
+        <section class="chartContainer">
+            <div class="chartSection">
+                <div class="sectionTitle">
+                    <h3>단지 배치도</h3>
+                    <p>쾌적한 주거환경을 위해 체계적으로 설계된 단지 전체 배치 계획을 확인하세요.</p>
+                </div>
+
+                <div class="chartImage">
+                    <img src="../images/sub/img_chart.png" alt="용인 고진역 대광로제비앙 단지 배치도">
+                </div>
+
+                <div class="chartFeatures">
+                    <div class="featureCard">
+                        <div class="icon">🏢</div>
+                        <h4>최적 배치 설계</h4>
+                        <p>동간 이격거리를 충분히 확보하여 프라이버시와 채광, 조망권을 모두 고려한 배치 설계</p>
+                    </div>
+                    <div class="featureCard">
+                        <div class="icon">🌳</div>
+                        <h4>조경 공간</h4>
+                        <p>단지 내 곳곳에 배치된 녹지공간과 조경시설로 자연친화적인 주거환경 조성</p>
+                    </div>
+                    <div class="featureCard">
+                        <div class="icon">🚗</div>
+                        <h4>편리한 동선</h4>
+                        <p>차량과 보행자 동선을 분리하여 안전하고 편리한 단지 내 이동환경 구축</p>
+                    </div>
+                    <div class="featureCard">
+                        <div class="icon">🏃</div>
+                        <h4>커뮤니티 시설</h4>
+                        <p>주민 모두가 함께 이용할 수 있는 다양한 커뮤니티 및 부대시설 배치</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 동·호 정보 -->
+        <section class="infoSection">
+            <div class="sectionTitle">
+                <h3>동·호 구성 정보</h3>
+                <p>각 동별 세대수와 호수 배치 현황을 상세히 안내드립니다.</p>
+            </div>
+
+            <div class="infoGrid">
+                <div class="infoCard">
+                    <h4>📍 동별 구성</h4>
+                    <ul>
+                        <li>101동: 지하 2층 ~ 지상 29층</li>
+                        <li>102동: 지하 2층 ~ 지상 29층</li>
+                        <li>103동: 지하 2층 ~ 지상 25층</li>
+                        <li>104동: 지하 2층 ~ 지상 25층</li>
+                        <li>105동: 지하 2층 ~ 지상 29층</li>
+                    </ul>
+                </div>
+
+                <div class="infoCard">
+                    <h4>🏠 세대 현황</h4>
+                    <ul>
+                        <li>전체 세대수: 485세대</li>
+                        <li>59㎡: 145세대</li>
+                        <li>74㎡: 180세대</li>
+                        <li>84㎡: 160세대</li>
+                    </ul>
+                </div>
+
+                <div class="infoCard">
+                    <h4>🚘 주차 계획</h4>
+                    <ul>
+                        <li>총 주차대수: 582대</li>
+                        <li>세대당 주차율: 120%</li>
+                        <li>지하주차장: 520대</li>
+                        <li>지상주차장: 62대</li>
+                    </ul>
+                </div>
+
+                <div class="infoCard">
+                    <h4>🌿 조경 계획</h4>
+                    <ul>
+                        <li>조경면적: 3,250㎡</li>
+                        <li>녹지율: 35%</li>
+                        <li>중앙광장: 1개소</li>
+                        <li>어린이놀이터: 2개소</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 다운로드 섹션 -->
+        <section class="downloadSection">
+            <div class="inner">
+                <h3>배치도 자료 다운로드</h3>
+                <p>상세한 단지 배치도와 동·호 배치 자료를 다운로드하여 확인하세요.</p>
+                <a href="#" class="downloadBtn" onclick="alert('준비 중입니다.')">📁 배치도 다운로드</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 플로팅 버튼 -->
+    <div class="floatingBtns">
+        <a href="customer.html" class="floatBtn">
+            <img src="../images/main/img_visual_person_i.png" alt="">
+            <img src="../images/main/img_visual_person_t.png" alt="관심고객등록" class="text">
+        </a>
+        <a href="tel:1668-5257" class="floatBtn">
+            <img src="../images/main/img_visual_tel_i.png" alt="">
+            <img src="../images/main/img_visual_tel_t.png" alt="전화문의" class="text">
+        </a>
+        <a href="#header" class="floatBtn topBtn">
+            <img src="../images/main/img_visual_top_i.png" alt="맨위로">
+        </a>
+    </div>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="footerWrap">
+            <div class="footerContent">
+                <p class="footerText">
+                    <strong>용인 고진역 대광로제비앙</strong><br>
+                    경기도 용인시 처인구 양지면 양지리 697번지 일원<br>
+                    시행사: 대광건영(주) | 시공사: 대광건영(주)<br>
+                    분양문의: <strong class="telNumber">1668-5257</strong>
+                </p>
+                <p class="copyright">
+                    Copyright © 2024 Daekwang Rosebiang. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/common.js"></script>
+</body>
+</html>

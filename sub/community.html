@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="용인 고진역 대광로제비앙 커뮤니티 시설 - 프리미엄 부대시설 및 편의시설 안내">
+    <meta name="keywords" content="용인고진역,대광로제비앙,커뮤니티,부대시설,편의시설,피트니스">
+    <title>커뮤니티 | 용인 고진역 대광로제비앙</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        /* 페이지 전용 스타일 */
+        .subVisual {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/sub/img_top_community.png') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .subVisual h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .subVisual p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .communityIntro {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .introContent {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .introContent h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .introContent h3::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #c8986b;
+        }
+
+        .introContent p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .facilitySection {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .facilityContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sectionTitle {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .sectionTitle h3 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .sectionTitle h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #c8986b;
+        }
+
+        .facilityGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .facilityCard {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .facilityCard:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .facilityCard .cardImage {
+            height: 200px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f8f8f8;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .facilityCard .cardContent {
+            padding: 30px;
+        }
+
+        .facilityCard h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .facilityCard .subtitle {
+            font-size: 1rem;
+            color: #c8986b;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .facilityCard p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .facilityCard .features {
+            list-style: none;
+        }
+
+        .facilityCard .features li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .facilityCard .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c8986b;
+            font-weight: bold;
+        }
+
+        .gallerySection {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .gallerySlider {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .gallerySlider .swiper-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            background: #f8f8f8;
+        }
+
+        .gallerySlider .swiper-button-prev,
+        .gallerySlider .swiper-button-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            color: #c8986b;
+        }
+
+        .gallerySlider .swiper-button-prev::after,
+        .gallerySlider .swiper-button-next::after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .gallerySlider .swiper-pagination {
+            bottom: 20px;
+        }
+
+        .gallerySlider .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.7;
+        }
+
+        .gallerySlider .swiper-pagination-bullet-active {
+            background: #c8986b;
+            opacity: 1;
+        }
+
+        .amenitySection {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #c8986b, #b88859);
+            color: #fff;
+        }
+
+        .amenityGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .amenityItem {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .amenityItem:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .amenityItem .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* 서브 네비게이션 */
+        .subNav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .subNavTabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .subNavTabs li {
+            margin: 0;
+        }
+
+        .subNavTabs li a {
+            display: block;
+            padding: 20px 40px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .subNavTabs li a:hover {
+            color: #c8986b;
+            background: #f8f8f8;
+        }
+
+        .subNavTabs li.active a {
+            color: #c8986b;
+            border-bottom-color: #c8986b;
+            font-weight: 600;
+        }
+
+        .subNavTabs li.active a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #c8986b;
+        }
+
+        .amenityItem h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .amenityItem p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .subVisual h2 {
+                font-size: 2rem;
+            }
+
+            .introContent h3,
+            .sectionTitle h3 {
+                font-size: 2rem;
+            }
+
+            .communityIntro,
+            .facilitySection,
+            .gallerySection,
+            .amenitySection {
+                padding: 60px 0;
+            }
+
+            .facilityGrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .gallerySlider .swiper-slide img {
+                height: 300px;
+                object-fit: contain;
+            }
+
+            .amenityGrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .amenityItem {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .facilityGrid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .amenityGrid {
+                grid-template-columns: 1fr;
+            }
+
+            .subNavTabs li a {
+                padding: 15px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="headerWrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/common/img_logo.png" alt="용인 고진역 대광로제비앙">
+                </a>
+            </h1>
+
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="summary.html">사업개요</a>
+                        <ul class="depth2">
+                            <li><a href="summary.html">사업개요</a></li>
+                            <li><a href="location.html">입지환경</a></li>
+                            <li><a href="premium.html">프리미엄</a></li>
+                            <li><a href="brand.html">브랜드 소개</a></li>
+                            <li><a href="direction.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="chart.html">단지안내</a>
+                        <ul class="depth2">
+                            <li><a href="chart.html">단지/동·호배치도</a></li>
+                            <li><a href="community.html" class="active">커뮤니티</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="unit.html">세대안내</a>
+                        <ul class="depth2">
+                            <li><a href="unit.html">유니트 안내</a></li>
+                            <li><a href="emodelhouse.html">E-모델하우스</a></li>
+                            <li><a href="materials.html">마감재 리스트</a></li>
+                            <li><a href="guide4.html">이동통신설비설치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="schedule.html">분양안내</a>
+                        <ul class="depth2">
+                            <li><a href="schedule.html">분양일정</a></li>
+                            <li><a href="guide5.html">분양안내</a></li>
+                            <li><a href="announcement.html">입주자모집공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guide1.html">청약안내</a>
+                        <ul class="depth2">
+                            <li><a href="guide1.html">청약체크리스트</a></li>
+                            <li><a href="guide2.html">일반공급 신청자격</a></li>
+                            <li><a href="guide3.html">특별공급 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customer.html">홍보센터</a>
+                        <ul class="depth2">
+                            <li><a href="customer.html">관심고객등록</a></li>
+                            <li><a href="video.html">홍보영상</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="partner.html">협력업체등록</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="headerInfo">
+                <a href="tel:1668-5257" class="tel">
+                    <img src="../images/common/img_tel.png" alt="전화문의">
+                    <span>1668-5257</span>
+                </a>
+                <button class="menuBtn" id="menuBtn">
+                    <img src="../images/common/img_open.png" alt="메뉴열기">
+                    <span>MENU</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="inner">
+            <a href="../index.html">HOME</a>
+            <span>></span>
+            <a href="chart.html">단지안내</a>
+            <span>></span>
+            <strong>커뮤니티</strong>
+        </div>
+    </div>
+
+    <!-- 서브 비주얼 -->
+    <section class="subVisual">
+        <div class="inner">
+            <h2>단지안내</h2>
+            <p>용인 고진역 대광로제비앙의 단지 정보와 커뮤니티 시설을 확인하세요</p>
+        </div>
+    </section>
+
+    <!-- 서브 네비게이션 -->
+    <section class="subNav">
+        <div class="inner">
+            <ul class="subNavTabs">
+                <li><a href="chart.html">단지/동·호배치도</a></li>
+                <li class="active"><a href="community.html">커뮤니티</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 메인 컨텐츠 -->
+    <main id="container">
+        <!-- 커뮤니티 소개 -->
+        <section class="communityIntro">
+            <div class="introContent">
+                <h3>Premium Community Space</h3>
+                <p>
+                    용인 고진역 대광로제비앙은 주민들의 건강하고 풍요로운 라이프스타일을 위해<br>
+                    다양한 커뮤니티 시설과 부대편의시설을 제공합니다.
+                </p>
+                <p>
+                    최신 트렌드를 반영한 프리미엄 시설들로 구성되어<br>
+                    일상 속에서 특별한 경험을 만들어드립니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 갤러리 -->
+        <section class="galleryWrap">
+            <div class="galleryContainer">
+                <h3>커뮤니티 갤러리</h3>
+                <p>프리미엄 커뮤니티 시설로 완성되는 특별한 일상</p>
+                <div class="galleryImage">
+                    <img src="../images/sub/img_community.png" alt="커뮤니티 시설 도면">
+                </div>
+            </div>
+        </section>
+
+        <!-- 주요 시설 -->
+        <section class="facilitySection">
+            <div class="facilityContainer">
+                <div class="sectionTitle">
+                    <h3>주요 커뮤니티 시설</h3>
+                </div>
+
+                <div class="facilityGrid">
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../휘트니스 센터.png');"></div>
+                        <div class="cardContent">
+                            <h4>휘트니스 센터</h4>
+                            <p class="subtitle">Fitness Center</p>
+                            <p>최신 운동기구와 쾌적한 환경에서 건강한 라이프스타일을 즐기세요.</p>
+                            <ul class="features">
+                                <li>최신 헬스기구 완비</li>
+                                <li>개인 트레이닝 공간</li>
+                                <li>샤워 및 락커시설</li>
+                                <li>프리미엄 운동 환경</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../GX룸.png');"></div>
+                        <div class="cardContent">
+                            <h4>GX룸</h4>
+                            <p class="subtitle">Group Exercise Room</p>
+                            <p>다양한 그룹 운동 프로그램을 즐길 수 있는 전용 공간입니다.</p>
+                            <ul class="features">
+                                <li>요가 & 필라테스</li>
+                                <li>에어로빅 프로그램</li>
+                                <li>댄스 클래스</li>
+                                <li>전문 강사 지도</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../스크린 골프연습장.png');"></div>
+                        <div class="cardContent">
+                            <h4>스크린 골프연습장</h4>
+                            <p class="subtitle">Screen Golf Practice</p>
+                            <p>최신 골프 시뮬레이터로 언제든지 라운딩을 즐길 수 있는 공간입니다.</p>
+                            <ul class="features">
+                                <li>최신 시뮬레이터 설비</li>
+                                <li>다양한 골프장 코스</li>
+                                <li>개인 연습 부스</li>
+                                <li>24시간 이용 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../주민카페.png');"></div>
+                        <div class="cardContent">
+                            <h4>주민카페</h4>
+                            <p class="subtitle">Residents Cafe</p>
+                            <p>이웃과의 소통과 휴식을 위한 품격 있는 주민 라운지 공간입니다.</p>
+                            <ul class="features">
+                                <li>프리미엄 카페 공간</li>
+                                <li>독서 및 업무공간</li>
+                                <li>소모임 공간</li>
+                                <li>Wi-Fi 완비</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../작은 도서관.png');"></div>
+                        <div class="cardContent">
+                            <h4>작은 도서관</h4>
+                            <p class="subtitle">Community Library</p>
+                            <p>조용하고 쾌적한 환경에서 독서와 학습을 위한 전용공간입니다.</p>
+                            <ul class="features">
+                                <li>다양한 도서 보유</li>
+                                <li>조용한 독서 공간</li>
+                                <li>학습 및 스터디룸</li>
+                                <li>어린이 도서 코너</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="facilityCard">
+                        <div class="cardImage" style="background-image: url('../실내 골프연습장.png');"></div>
+                        <div class="cardContent">
+                            <h4>실내 골프연습장</h4>
+                            <p class="subtitle">Indoor Golf Practice</p>
+                            <p>프라이빗한 환경에서 골프 실력 향상을 위한 전용 연습공간입니다.</p>
+                            <ul class="features">
+                                <li>개인 연습 부스</li>
+                                <li>스윙 분석 시스템</li>
+                                <li>프로 레슨 가능</li>
+                                <li>연습용품 대여</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 플로팅 버튼 -->
+    <div class="floatingBtns">
+        <a href="customer.html" class="floatBtn">
+            <img src="../images/main/img_visual_person_i.png" alt="">
+            <img src="../images/main/img_visual_person_t.png" alt="관심고객등록" class="text">
+        </a>
+        <a href="tel:1668-5257" class="floatBtn">
+            <img src="../images/main/img_visual_tel_i.png" alt="">
+            <img src="../images/main/img_visual_tel_t.png" alt="전화문의" class="text">
+        </a>
+        <a href="#header" class="floatBtn topBtn">
+            <img src="../images/main/img_visual_top_i.png" alt="맨위로">
+        </a>
+    </div>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="footerWrap">
+            <div class="footerContent">
+                <p class="footerText">
+                    <strong>용인 고진역 대광로제비앙</strong><br>
+                    경기도 용인시 처인구 양지면 양지리 697번지 일원<br>
+                    시행사: 대광건영(주) | 시공사: 대광건영(주)<br>
+                    분양문의: <strong class="telNumber">1668-5257</strong>
+                </p>
+                <p class="copyright">
+                    Copyright © 2024 Daekwang Rosebiang. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        // 갤러리 슬라이더
+        const gallerySlider = new Swiper('.gallerySlider', {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            speed: 800,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            navigation: {
+                nextEl: '.gallerySlider .swiper-button-next',
+                prevEl: '.gallerySlider .swiper-button-prev',
+            },
+            pagination: {
+                el: '.gallerySlider .swiper-pagination',
+                clickable: true,
+            }
+        });
+    </script>
+</body>
+</html>

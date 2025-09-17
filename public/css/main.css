@@ -106,72 +106,6 @@
     transform: translateY(-5px);
 }
 
-/* 섹션1: 입지환경 */
-.sec1Wrap {
-    position: relative;
-    background: #f8f8f8;
-}
-
-.sec1Wrap .contentGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
-    padding: 0 20px;
-}
-
-.sec1Wrap .gridItem {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.sec1Wrap .gridItem:hover {
-    transform: translateY(-10px);
-}
-
-.sec1Wrap .gridItem .mainImg {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.sec1Wrap .gridItem .textArea {
-    padding: 20px;
-    text-align: center;
-}
-
-.sec1Wrap .gridItem .textArea img {
-    display: block;
-    margin: 10px auto;
-}
-
-.sec1Wrap .bgImages {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    opacity: 0.1;
-}
-
-.sec1Wrap .bgImages .bg1 {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    width: 300px;
-}
-
-.sec1Wrap .bgImages .bg2 {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-    width: 400px;
-}
-
 /* 섹션2: 프리미엄 */
 .sec2Wrap {
     background: #fff;
@@ -384,9 +318,6 @@
     opacity: 1;
 }
 
-.sec1Wrap .gridItem {
-    opacity: 1;
-}
 
 .sec2Wrap .mainImg {
     opacity: 1;
@@ -432,9 +363,6 @@
         max-width: 500px;
     }
     
-    .sec1Wrap .contentGrid {
-        grid-template-columns: repeat(3, 1fr);
-    }
     
     .sec5Wrap {
         flex-direction: column;
@@ -452,10 +380,6 @@
         max-width: 400px;
     }
     
-    .sec1Wrap .contentGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
     
     .videoBtns {
         flex-direction: column;
@@ -498,31 +422,6 @@
         max-width: 120px;
     }
     
-    .sec1Wrap .contentGrid {
-        grid-template-columns: 1fr;
-        padding: 0 15px;
-        gap: 15px;
-    }
-    
-    .sec1Wrap .gridItem {
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    
-    .sec1Wrap .gridItem .mainImg {
-        height: 150px;
-    }
-    
-    .sec1Wrap .gridItem .textArea {
-        padding: 15px;
-    }
-    
-    .sec1Wrap .gridItem .textArea img {
-        max-width: 90%;
-    }
-    
-    .sec1Wrap .bgImages {
-        display: none;
-    }
     
     .sec2Wrap .mainImg {
         padding: 0 15px;
@@ -595,9 +494,6 @@
         gap: 15px;
     }
     
-    .sec1Wrap .contentGrid {
-        grid-template-columns: 1fr;
-    }
     
     .videoBtn img {
         max-width: 200px;
