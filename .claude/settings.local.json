@@ -8,7 +8,8 @@
       "Bash(rm:*)",
       "Bash(tree:*)",
       "Bash(xcopy:*)",
-      "Bash(if not exist publicsub mkdir publicsub)"
+      "Bash(if not exist publicsub mkdir publicsub)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []

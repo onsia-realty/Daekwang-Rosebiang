@@ -205,7 +205,6 @@ export default function Unit() {
                     <section className="subVisual">
                         <div className="inner">
                             <h2>유니트 안내</h2>
-                            <p>다양한 평형대로 구성된 프리미엄 주거공간을 확인해보세요</p>
                         </div>
                     </section>
 
@@ -246,10 +245,6 @@ export default function Unit() {
                                             </div>
                                             <div className="unit_info">
                                                 <h4>{tab.info.type}</h4>
-                                                <p><strong>전용면적:</strong> {tab.info.exclusive}</p>
-                                                <p><strong>공급면적:</strong> {tab.info.supply}</p>
-                                                <p><strong>방 구성:</strong> {tab.info.rooms}</p>
-                                                <p><strong>특징:</strong> {tab.info.features}</p>
                                             </div>
                                         </div>
                                     ))}

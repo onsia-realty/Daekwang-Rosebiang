@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import Link from 'next/link';
 
 export default function Home() {
+    const [videoPopup, setVideoPopup] = useState(null);
+
     useEffect(() => {
         // DOM이 로드된 후 스크립트 실행
         const initializeScripts = () => {
@@ -71,6 +74,14 @@ export default function Home() {
         return () => clearTimeout(timer);
     }, []);
 
+    const openVideoPopup = (videoId) => {
+        setVideoPopup(`https://www.youtube.com/embed/${videoId}`);
+    };
+
+    const closeVideoPopup = () => {
+        setVideoPopup(null);
+    };
+
     return (
         <>
             <Head>
@@ -83,6 +94,12 @@ export default function Home() {
                 <meta property="og:image" content="/images/common/img_logo.png" />
                 <title>|용인 고진역| 대광로제비앙</title>
             </Head>
+
+            {/* Swiper CSS */}
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+            />
 
             {/* Swiper JS */}
             <Script
@@ -147,258 +164,192 @@ export default function Home() {
                 }}
             />
 
-            {/* 공통 스크립트 */}
-            <Script src="/js/common.js" strategy="afterInteractive" />
-            <Script src="/js/main.js" strategy="afterInteractive" />
-
-            {/* 전체 HTML 구조 그대로 가져오기 */}
-            <div dangerouslySetInnerHTML={{ __html: `
-                <!-- 헤더 -->
-                <header id="header">
-                    <div class="headerWrap">
-                        <h1 class="logo">
-                            <a href="/">
-                                <img src="/images/common/img_logo.png" alt="용인 고진역 대광로제비앙">
-                            </a>
-                        </h1>
-
-                        <nav class="gnb">
-                            <ul>
-                                <li>
-                                    <a href="/sub/summary.html">사업개요</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/summary.html">사업개요</a></li>
-                                        <li><a href="/sub/location.html">입지환경</a></li>
-                                        <li><a href="/sub/premium.html">프리미엄</a></li>
-                                        <li><a href="/sub/brand.html">브랜드 소개</a></li>
-                                        <li><a href="/sub/direction.html">오시는길</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/chart.html">단지안내</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/chart.html">단지/동·호배치도</a></li>
-                                        <li><a href="/sub/community.html">커뮤니티</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/unit.html">세대안내</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/unit.html">유니트 안내</a></li>
-                                        <li><a href="/sub/emodelhouse.html">E-모델하우스</a></li>
-                                        <li><a href="/sub/materials.html">마감재 리스트</a></li>
-                                        <li><a href="/sub/guide4.html">이동통신설비설치안내</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/schedule.html">분양안내</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/schedule.html">분양일정</a></li>
-                                        <li><a href="/sub/guide5.html">분양안내</a></li>
-                                        <li><a href="/sub/announcement.html">입주자모집공고</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/guide1.html">청약안내</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/guide1.html">청약체크리스트</a></li>
-                                        <li><a href="/sub/guide2.html">일반공급 신청자격</a></li>
-                                        <li><a href="/sub/guide3.html">특별공급 안내</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/customer.html">홍보센터</a>
-                                    <ul class="depth2">
-                                        <li><a href="/sub/customer.html">관심고객등록</a></li>
-                                        <li><a href="/sub/video.html">홍보영상</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/sub/partner.html">협력업체등록</a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <div class="headerInfo">
-                            <a href="tel:1668-5257" class="tel">
-                                <img src="/images/common/img_tel.png" alt="전화문의">
-                                <span>1668-5257</span>
-                            </a>
-                            <button class="menuBtn" id="menuBtn">
-                                <img src="/images/common/img_open.png" alt="메뉴열기">
-                                <span>MENU</span>
-                            </button>
+            {/* 메인 비주얼 */}
+            <section className="visualWrap">
+                <div className="visualSlider swiper">
+                    <div className="swiper-wrapper">
+                        <div className="swiper-slide">
+                            <img src="/img_visual_si1.png" alt="용인 고진역 대광로제비앙" />
+                            <div className="textWrap">
+                                <h2>용인 고진역 대광로제비앙</h2>
+                                <p>새로운 미래가 시작되는 곳</p>
+                            </div>
+                        </div>
+                        <div className="swiper-slide">
+                            <img src="/img_visual_si3.png" alt="프리미엄 입지" />
+                            <div className="textWrap">
+                                <h2>프리미엄 입지</h2>
+                                <p>고진역 초역세권의 특별함</p>
+                            </div>
+                        </div>
+                        <div className="swiper-slide">
+                            <img src="/img_sec1_si3.png" alt="자연과 함께하는 삶" />
+                            <div className="textWrap">
+                                <h2>자연과 함께하는 삶</h2>
+                                <p>숲세권 프리미엄 라이프</p>
+                            </div>
                         </div>
                     </div>
-                </header>
-
-                <!-- 플로팅 버튼 -->
-                <div class="floatingBtns">
-                    <a href="/sub/customer.html" class="floatBtn">
-                        <img src="/images/main/img_visual_person_i.png" alt="">
-                        <img src="/images/main/img_visual_person_t.png" alt="관심고객등록" class="text">
-                    </a>
-                    <a href="tel:1668-5257" class="floatBtn">
-                        <img src="/images/main/img_visual_tel_i.png" alt="">
-                        <img src="/images/main/img_visual_tel_t.png" alt="전화문의" class="text">
-                    </a>
-                    <a href="#header" class="floatBtn topBtn">
-                        <img src="/images/main/img_visual_top_i.png" alt="맨위로">
-                    </a>
+                    <div className="swiper-pagination"></div>
+                    <div className="swiper-button-next"></div>
+                    <div className="swiper-button-prev"></div>
                 </div>
+            </section>
 
-                <!-- 메인 비주얼 -->
-                <section class="visualWrap">
-                    <div class="visualSlider swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="/images/main/img_visual1.png" alt="용인 고진역 대광로제비앙">
-                                <div class="textWrap">
-                                    <h2>용인 고진역 대광로제비앙</h2>
-                                    <p>새로운 미래가 시작되는 곳</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/images/main/img_visual2.png" alt="프리미엄 입지">
-                                <div class="textWrap">
-                                    <h2>프리미엄 입지</h2>
-                                    <p>고진역 초역세권의 특별함</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/images/main/img_visual3.png" alt="자연과 함께하는 삶">
-                                <div class="textWrap">
-                                    <h2>자연과 함께하는 삶</h2>
-                                    <p>숲세권 프리미엄 라이프</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+            {/* 섹션1: 사업개요 */}
+            <section className="sec1Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>용인 고진역 대광로제비앙</h2>
+                        <p>고진역 도보 5분, 용인의 새로운 중심</p>
                     </div>
-                </section>
-
-                <!-- 섹션2: 프리미엄 -->
-                <section class="sec2Wrap sec">
-                    <div class="inner">
-                        <div class="titleWrap">
-                            <img src="/images/main/img_sec2_ti.png" alt="PREMIUM">
-                        </div>
-                        <div class="contentWrap">
-                            <img src="/images/main/img_sec2.png" alt="프리미엄 이미지">
-                        </div>
+                    <div className="contentWrap">
+                        <img src="/img_top_summary.png" alt="조감도" />
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- 섹션3: 갤러리 -->
-                <section class="sec3Wrap sec" style="background-image: url(/images/main/img_sec3_bg.png);">
-                    <div class="inner">
-                        <div class="titleWrap">
-                            <img src="/images/main/img_sec3_ti.png" alt="GALLERY">
+            {/* 섹션2: 프리미엄 */}
+            <section className="sec2Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>PREMIUM</h2>
+                        <p>특별한 가치가 있는 곳</p>
+                    </div>
+                    <div className="premiumGrid">
+                        <div className="premiumItem">
+                            <img src="/img_sec1_si1.png" alt="교통" />
+                            <h3>교통의 중심</h3>
+                            <p>고진역 도보 5분<br />GTX-A 용인역 인접</p>
                         </div>
-                        <div class="gallerySlider swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="/images/main/img_gallery1.png" alt="갤러리 이미지1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/main/img_gallery2.png" alt="갤러리 이미지2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/main/img_gallery3.png" alt="갤러리 이미지3">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/main/img_gallery4.png" alt="갤러리 이미지4">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/main/img_gallery5.png" alt="갤러리 이미지5">
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+                        <div className="premiumItem">
+                            <img src="/img_sec1_si2.png" alt="교육" />
+                            <h3>교육 프리미엄</h3>
+                            <p>도보권 초·중·고<br />명문학군 진입</p>
+                        </div>
+                        <div className="premiumItem">
+                            <img src="/img_sec1_si23.png" alt="생활" />
+                            <h3>편리한 생활</h3>
+                            <p>대형마트, 백화점<br />생활인프라 완비</p>
+                        </div>
+                        <div className="premiumItem">
+                            <img src="/img_sec1_si31.png" alt="자연" />
+                            <h3>자연과 함께</h3>
+                            <p>공원, 산책로<br />녹지공간 풍부</p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- 섹션4: 비디오 -->
-                <section class="sec4Wrap sec" style="background-image: url(/images/main/img_sec4_bg.png);">
-                    <div class="inner">
-                        <div class="titleWrap">
-                            <img src="/images/main/img_sec4_ti.png" alt="VIDEO">
+            {/* 섹션3: 유니트 */}
+            <section className="sec3Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>UNIT</h2>
+                        <p>라이프스타일에 맞는 다양한 평형</p>
+                    </div>
+                    <div className="unitGrid">
+                        <div className="unitItem">
+                            <img src="/img_unit1.png" alt="59㎡A" />
+                            <h3>59㎡A</h3>
+                            <p>265세대</p>
                         </div>
-                        <div class="videoButtons">
-                            <button class="videoBtn" data-video="L9vvhQ8CTPI">
-                                <img src="/images/main/img_sec4_btn1.png" alt="입지홍보영상">
-                            </button>
-                            <button class="videoBtn" data-video="R4QqOUvCQxs">
-                                <img src="/images/main/img_sec4_btn2.png" alt="3D홍보영상">
-                            </button>
+                        <div className="unitItem">
+                            <img src="/img_unit2.png" alt="59㎡B" />
+                            <h3>59㎡B</h3>
+                            <p>97세대</p>
+                        </div>
+                        <div className="unitItem">
+                            <img src="/img_unit3.png" alt="73㎡" />
+                            <h3>73㎡</h3>
+                            <p>108세대</p>
+                        </div>
+                        <div className="unitItem">
+                            <img src="/img_unit4.png" alt="84㎡" />
+                            <h3>84㎡A/B</h3>
+                            <p>309세대</p>
                         </div>
                     </div>
-                </section>
+                    <Link href="/unit" className="moreBtn">
+                        유니트 자세히 보기
+                    </Link>
+                </div>
+            </section>
 
-                <!-- 섹션5: 위치 -->
-                <section class="sec5Wrap sec">
-                    <div class="inner">
-                        <div class="titleWrap">
-                            <img src="/images/main/img_sec5_ti.png" alt="LOCATION">
-                        </div>
-                        <div class="contentWrap">
-                            <img src="/images/main/img_sec5.png" alt="위치 안내">
-                            <div class="mapButtons">
-                                <a href="https://naver.me/5OHXqQVP" target="_blank" rel="noopener noreferrer" class="mapBtn">
-                                    <img src="/images/main/img_sec5_btn1.png" alt="네이버지도">
+            {/* 섹션4: 커뮤니티 */}
+            <section className="sec4Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>COMMUNITY</h2>
+                        <p>품격있는 라이프스타일</p>
+                    </div>
+                    <div className="communitySlider">
+                        <img src="/img_community.png" alt="커뮤니티 시설" />
+                    </div>
+                    <Link href="/complex/community" className="moreBtn">
+                        커뮤니티 시설 보기
+                    </Link>
+                </div>
+            </section>
+
+            {/* 섹션5: 비디오 */}
+            <section className="sec5Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>VIDEO</h2>
+                        <p>영상으로 만나는 대광로제비앙</p>
+                    </div>
+                    <div className="videoButtons">
+                        <button className="videoBtn" onClick={() => openVideoPopup('L9vvhQ8CTPI')}>
+                            <span>📍 입지홍보영상</span>
+                        </button>
+                        <button className="videoBtn" onClick={() => openVideoPopup('R4QqOUvCQxs')}>
+                            <span>🏠 3D홍보영상</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* 섹션6: 위치 */}
+            <section className="sec6Wrap sec">
+                <div className="inner">
+                    <div className="titleWrap">
+                        <h2>LOCATION</h2>
+                        <p>홍보관 위치 안내</p>
+                    </div>
+                    <div className="locationInfo">
+                        <img src="/img_location.png" alt="위치 안내" />
+                        <div className="addressBox">
+                            <h3>홍보관</h3>
+                            <p>경기도 용인시 처인구 유림로 154번길 32</p>
+                            <p className="tel">1668-5257</p>
+                            <div className="btnGroup">
+                                <a href="https://naver.me/용인고진역대광로제비앙" target="_blank" rel="noopener noreferrer" className="mapBtn">
+                                    네이버 지도
                                 </a>
-                                <a href="https://kko.to/Ri-OhzJqPp" target="_blank" rel="noopener noreferrer" class="mapBtn">
-                                    <img src="/images/main/img_sec5_btn2.png" alt="카카오맵">
+                                <a href="https://map.kakao.com/용인고진역대광로제비앙" target="_blank" rel="noopener noreferrer" className="mapBtn">
+                                    카카오맵
                                 </a>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- 푸터 -->
-                <footer id="footer">
-                    <div class="footerWrap">
-                        <div class="footerContent">
-                            <p class="footerText">
-                                <strong>용인 고진역 대광로제비앙</strong><br>
-                                경기도 용인시 처인구 양지면 양지리 697번지 일원<br>
-                                시행사: 대광건영(주) | 시공사: 대광건영(주)<br>
-                                분양문의: <strong class="telNumber">1668-5257</strong>
-                            </p>
-                            <p class="copyright">
-                                Copyright © 2024 Daekwang Rosebiang. All rights reserved.
-                            </p>
-                        </div>
-                    </div>
-                </footer>
-
-                <!-- 비디오 팝업 -->
-                <div class="popupWrap videoPopup" id="videoPopup">
-                    <div class="popupContent">
-                        <button class="popupClose">×</button>
-                        <div class="videoWrapper">
-                            <iframe id="popupVideo" src="" frameborder="0" allowfullscreen></iframe>
-                        </div>
+            {/* YouTube 비디오 팝업 */}
+            {videoPopup && (
+                <div className="videoPopupOverlay" onClick={closeVideoPopup}>
+                    <div className="videoPopupContent" onClick={(e) => e.stopPropagation()}>
+                        <button className="videoCloseBtn" onClick={closeVideoPopup}>×</button>
+                        <iframe
+                            src={`${videoPopup}?autoplay=1`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
                     </div>
                 </div>
-
-                <!-- 사이드 팝업들 -->
-                <div class="sidePopup popup1" data-popup="1">
-                    <img src="/images/popup/img_popup1.png" alt="팝업1">
-                    <button class="closeBtn">닫기</button>
-                </div>
-                <div class="sidePopup popup2" data-popup="2">
-                    <img src="/images/popup/img_popup2.png" alt="팝업2">
-                    <button class="closeBtn">닫기</button>
-                </div>
-                <div class="sidePopup popup3" data-popup="3">
-                    <img src="/images/popup/img_popup3.png" alt="팝업3">
-                    <button class="closeBtn">닫기</button>
-                </div>
-            ` }} />
+            )}
         </>
     );
 }
